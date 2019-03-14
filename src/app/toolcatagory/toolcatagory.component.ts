@@ -463,36 +463,70 @@ apiRoot: string = "http://152.135.122.61:8871";
 
 
     this.http.get(this.apiRoot+'/api/tool_category_data/50/').subscribe(data =>{
-      this._labListed12 = data as [any];
-      if (this._labListed12.Tool_efficiency === false) {
-        $('#lab12').css({fill: "rgba(239, 9, 9, 0.78)"});
+      this._labListed12a = data as [any];
+      if (this._labListed12a.Tool_efficiency === false) {
+        $('#lab12a').css({fill: "rgba(239, 9, 9, 0.78)"});
       }
-      else if (this._labListed12.Tool_efficiency === true) {
-        $('#lab12').css({fill: "rgba(140, 192, 19, 0.88)"});
+      else if (this._labListed12a.Tool_efficiency === true) {
+        $('#lab12a').css({fill: "rgba(140, 192, 19, 0.88)"});
       }
 
-      $("#lab12").hover(()=>{
-        if (this._labListed12.Tool_Category === "Qualifications") {
-            $('#lab12').css("fill", "rgb(125, 109, 196)");
+      $("#lab12a").hover(()=>{
+        if (this._labListed12a.Tool_Category === "Qualifications") {
+            $('#lab12a').css("fill", "rgb(125, 109, 196)");
         }
-        else if (this._labListed12.Tool_Category === "Field Issues") {
-            $('#lab12').css("fill", "rgb(255, 193, 203)");
+        else if (this._labListed12a.Tool_Category === "Field Issues") {
+            $('#lab12a').css("fill", "rgb(255, 193, 203)");
 
         }
-        else if (this._labListed12.Tool_Category === "Process") {
-            $('#lab12').css({fill: "#aee9ca"});
+        else if (this._labListed12a.Tool_Category === "Process") {
+            $('#lab12a').css({fill: "#aee9ca"});
         }
     },
      ()=> {
-        if (this._labListed12.Tool_efficiency === false) {
-            $('#lab12').css({fill: "rgba(239, 9, 9, 0.78)"});
+        if (this._labListed12a.Tool_efficiency === false) {
+            $('#lab12a').css({fill: "rgba(239, 9, 9, 0.78)"});
         }
-        else if (this._labListed12.Tool_efficiency === true) {
-            $('#lab12').css({fill: "rgba(140, 192, 19, 0.88)"});
+        else if (this._labListed12a.Tool_efficiency === true) {
+            $('#lab12a').css({fill: "rgba(140, 192, 19, 0.88)"});
         }
     });
 
     })
+
+
+    this.http.get(this.apiRoot+'/api/tool_category_data/50/').subscribe(data =>{
+        this._labListed12b = data as [any];
+        if (this._labListed12b.Tool_efficiency === false) {
+          $('#lab12b').css({fill: "rgba(239, 9, 9, 0.78)"});
+        }
+        else if (this._labListed12b.Tool_efficiency === true) {
+          $('#lab12b').css({fill: "rgba(140, 192, 19, 0.88)"});
+        }
+  
+        $("#lab12b").hover(()=>{
+          if (this._labListed12b.Tool_Category === "Qualifications") {
+              $('#lab12b').css("fill", "rgb(125, 109, 196)");
+          }
+          else if (this._labListed12b.Tool_Category === "Field Issues") {
+              $('#lab12b').css("fill", "rgb(255, 193, 203)");
+  
+          }
+          else if (this._labListed12b.Tool_Category === "Process") {
+              $('#lab12b').css({fill: "#aee9ca"});
+          }
+      },
+       ()=> {
+          if (this._labListed12b.Tool_efficiency === false) {
+              $('#lab12b').css({fill: "rgba(239, 9, 9, 0.78)"});
+          }
+          else if (this._labListed12b.Tool_efficiency === true) {
+              $('#lab12b').css({fill: "rgba(140, 192, 19, 0.88)"});
+          }
+      });
+  
+      })
+  
 
     this.http.get(this.apiRoot+'/api/tool_category_data/38/').subscribe(data =>{
       this._labListed13 = data as [any];
@@ -725,38 +759,38 @@ apiRoot: string = "http://152.135.122.61:8871";
     })
 
 
-//  this.http.get(this.apiRoot+'/api/tool_category_data/55/').subscribe(data =>{
-//       console.log(data);
-//       this._labListed20 = data as [any];
-//       if (this._labListed20.Tool_efficiency === false) {
-//         $('#lab20').css({fill: "rgba(239, 9, 9, 0.78)"});
-//       }
-//       else if (this._labListed20.Tool_efficiency === true) {
-//         $('#lab20').css({fill: "rgba(140, 192, 19, 0.88)"});
-//       }
+ this.http.get(this.apiRoot+'/api/tool_category_data/55/').subscribe(data =>{
+      console.log(data);
+      this._labListed20 = data as [any];
+      if (this._labListed20.Tool_efficiency === false) {
+        $('#lab20').css({fill: "rgba(239, 9, 9, 0.78)"});
+      }
+      else if (this._labListed20.Tool_efficiency === true) {
+        $('#lab20').css({fill: "rgba(140, 192, 19, 0.88)"});
+      }
 
-//       $("#lab20").hover(()=>{
-//         if (this._labListed20.Tool_Category === "Qualifications") {
-//             $('#lab20').css("fill", "rgb(125, 109, 196)");
-//         }
-//         else if (this._labListed20.Tool_Category === "Field Issues") {
-//             $('#lab20').css("fill", "rgb(255, 193, 203)");
+      $("#lab20").hover(()=>{
+        if (this._labListed20.Tool_Category === "Qualifications") {
+            $('#lab20').css("fill", "rgb(125, 109, 196)");
+        }
+        else if (this._labListed20.Tool_Category === "Field Issues") {
+            $('#lab20').css("fill", "rgb(255, 193, 203)");
 
-//         }
-//         else if (this._labListed20.Tool_Category === "Process") {
-//             $('#lab20').css({fill: "#aee9ca"});
-//         }
-//     },
-//      ()=> {
-//         if (this._labListed20.Tool_efficiency === false) {
-//             $('#lab20').css({fill: "rgba(239, 9, 9, 0.78)"});
-//         }
-//         else if (this._labListed20.Tool_efficiency === true) {
-//             $('#lab20').css({fill: "rgba(140, 192, 19, 0.88)"});
-//         }
-//     });
+        }
+        else if (this._labListed20.Tool_Category === "Process") {
+            $('#lab20').css({fill: "#aee9ca"});
+        }
+    },
+     ()=> {
+        if (this._labListed20.Tool_efficiency === false) {
+            $('#lab20').css({fill: "rgba(239, 9, 9, 0.78)"});
+        }
+        else if (this._labListed20.Tool_efficiency === true) {
+            $('#lab20').css({fill: "rgba(140, 192, 19, 0.88)"});
+        }
+    });
 
-//     })
+    })
 
 
     this.http.get(this.apiRoot+'/api/tool_category_data/58/').subscribe(data =>{
