@@ -308,21 +308,21 @@ export class BayhomeComponent implements OnInit {
 
 
 
-                    this.bay12A =  this._toolsListed.filter(data=>{
-                      return data.bay_number=='12A' && data.is_active == true
+                    this.bay12 =  this._toolsListed.filter(data=>{
+                      return data.bay_number==12 && data.is_active == true
                     });
-                      this.bay12A.forEach(function (value) {
+                      this.bay12.forEach(function (value) {
                       if(value.status === 'IN'){
-                        $('#bay12A').css({fill: "#ffff80"});
+                        $('#bay12').css({fill: "#ffff80"});
                       }
                       else if (value.status === 'ID') {
-                        $('#bay12A').css({fill: "#ff7f7f"});
+                        $('#bay12').css({fill: "#ff7f7f"});
                       }
                       else if (value.status === 'PR') {
-                        $('#bay12A').css({fill: "#c2de80"});
+                        $('#bay12').css({fill: "#c2de80"});
                       }
                       else if (value.status === 'MA') {
-                        $('#bay12A').css({fill: "#9ac3f5"});
+                        $('#bay12').css({fill: "#9ac3f5"});
                       }
                       })
         
