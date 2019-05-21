@@ -32,17 +32,17 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    this.router.navigate(['dashboard/bayhome']);
   }
 
   
 
   submit(data){
-    console.log(data);
     this._logindata.callLogin(data).subscribe(data =>{
       this.token = data;
       if (this.token.token) {
         const expiresAt = moment().add(this.token.expiresIn,'second');
-
+        let localStorage : any;
         localStorage.setItem('csrftoken', this.token.token);
         localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
         // this.cookie.set("csrftoken",this.token.token);
@@ -51,23 +51,25 @@ export class LoginComponent implements OnInit {
       }
     }, (err)=> {
         this.messageresponse = "Please check your email or password";
-        this.openModal(this.messageresponse);
+        // this.openModal(this.messageresponse);
     })
   }
+    
+  
 
 
   
 
-  openModal(resp){
-    const initialState = {
-      title: 'Login',
-      messageresponse:resp
-    };
-    this.modalRef = this._modalservice.show(ModalContentComponent, {initialState});
-    this.modalRef.content.closeBtnName = 'OK';
-  }
+  // openModal(resp){
+  //   const initialState = {
+  //     title: 'Login',
+  //     messageresponse:resp
+  //   };
+  //   this.modalRef = this._modalservice.show(ModalContentComponent, {initialState});
+  //   this.modalRef.content.closeBtnName = 'OK';
+  // }
 
  
 
-}
 
+}

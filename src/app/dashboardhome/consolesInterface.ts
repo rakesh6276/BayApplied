@@ -31,7 +31,7 @@ export class AddTools {
                 public tool_users:number;
                 public tool_category:number;
                 public status:string = 'ID';
-                public is_active:Boolean=false; 
+                public is_active:Boolean; 
     
   }
   

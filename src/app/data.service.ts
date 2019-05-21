@@ -14,19 +14,18 @@ import { CookieService } from 'ngx-cookie-service';
 export class DataService {
 
 
-  //apiRoot: string = "http://152.135.122.61:8871";
+  //apiRoot: string = "http://49.204.68.18:8871";
 
-  apiRoot: string = "http://152.135.122.61:8871";
-  
-  //apiRoot: string = "http://127.0.0.1:8000";
+   apiRoot: string = "http://152.135.122.61:8871";
+
+//apiRoot: string = "http://127.0.0.1:8000";
 
   //  idToken = localStorage.getItem('csrftoken');
   //  options = { headers: new HttpHeaders({'Authorization': 'JWT '+ this.idToken}) };
 
   
 
-constructor(private http:HttpClient,private cookie:CookieService
-){
+constructor(private http:HttpClient,private cookie:CookieService) {
 }
   
    
@@ -66,7 +65,7 @@ constructor(private http:HttpClient,private cookie:CookieService
     // }
 
     sendIdGetToolPage(id){
-      return this.http.get(this.apiRoot+'/api/baytool/?bid='+id).map((response:Response)=>{
+      return this.http.get(this.apiRoot+'/api/test_tool_detail/'+id+'/').map((response:Response)=>{
         return response;
       }).catch(this.handleError)
     }
@@ -91,12 +90,14 @@ constructor(private http:HttpClient,private cookie:CookieService
 
     getAllprojects(){
       return this.http.get(this.apiRoot+'/api/projects').map((response:Response)=>{
+          console.log('all projects',response);
           return response;
 
       }).catch(this.handleError);
     }
 
     saveNewProjects(data){
+      // console.log(data);
       return this.http.post(this.apiRoot+'/api/projects/',data).map((response:Response)=>{
         return response;
       }).catch(this.handleError)
@@ -206,9 +207,9 @@ saveNewTools(data){
     }).catch(this.handleError)
 }
 
-loggedIn(){
-  return !!localStorage.getItem('csrftoken');
-}
+// loggedIn(){
+//   return !!localStorage.getItem('csrftoken');
+// }
 
 getToken(){
   return localStorage.getItem('csrftoken');
@@ -282,11 +283,8 @@ uploadImage(data){
   }).catch(this.handleError)
 }
 
-filterCategorytable(data){
-  return this.http.get(this.apiRoot+'/api/tool_category_list/?start_date='+data.start_date+'&end_date='+data.end_date).map((response:Response)=>{
-    return response;
-  }).catch(this.handleError)
-}
+
+
 
   private handleError(error: Response) {
     return Observable.throw(error.statusText);
