@@ -14,9 +14,9 @@ import { CookieService } from 'ngx-cookie-service';
 export class DataService {
 
 
-  //apiRoot: string = "http://49.204.68.18:8871";
+  //apiRoot: string = "http://127.0.0.1:8001 ";
 
-   apiRoot: string = "http://152.135.122.61:8871";
+   apiRoot: string = "http://127.0.0.1:8001";
 
 //apiRoot: string = "http://127.0.0.1:8000";
 
@@ -238,6 +238,7 @@ getProjectReport(): Observable<any> {
   return this.http.get(this.apiRoot+'/api/export_project_xls').map((response: Response)=> {
       // const todos = response.json();
       // return todos.map((todo) => new Todo(todo));
+      console.log('response from getProjectReport Service', response);
     return response;
     })
 }
